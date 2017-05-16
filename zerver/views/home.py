@@ -260,7 +260,6 @@ def home_real(request: HttpRequest) -> HttpResponse:
             show_plans = True
 
     request._log_data['extra'] = "[%s]" % (register_ret["queue_id"],)
-
     page_params['translation_data'] = {}
     if request_language != 'en':
         page_params['translation_data'] = get_language_translation_data(request_language)
@@ -273,6 +272,7 @@ def home_real(request: HttpRequest) -> HttpResponse:
         # include (and thus how to display emojis in the emoji picker
         # and composebox typeahead).
         emojiset = UserProfile.GOOGLE_BLOB_EMOJISET
+    is_iframe = True if request.GET.get('is_iframe', None) else False
     response = render(request, 'zerver/app/index.html',
                       context={'user_profile': user_profile,
                                'emojiset': emojiset,
@@ -291,6 +291,7 @@ def home_real(request: HttpRequest) -> HttpResponse:
                                'show_webathena': user_profile.realm.webathena_enabled,
                                'enable_feedback': settings.ENABLE_FEEDBACK,
                                'embedded': narrow_stream is not None,
+                               'is_iframe': is_iframe,
                                },)
     patch_cache_control(response, no_cache=True, no_store=True, must_revalidate=True)
     return response

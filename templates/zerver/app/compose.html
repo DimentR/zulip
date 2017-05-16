@@ -7,7 +7,7 @@
                 <span class="compose-send-status-close">&times;</span>
                 <span id="compose-reply-error-msg"></span>
             </div>
-            <div id="compose_buttons">
+            <div id="compose_buttons" {% if is_iframe %} style="display: none;"{% endif %}>
                 <span class="new_message_button">
                     <a class="drafts-link no-underline button small rounded compose_drafts_button" href="#drafts" title="{{ _('Drafts') }} (d)">
                         {{ _('Drafts') }}
