@@ -62,6 +62,10 @@
     width: 10px;
 }
 
+.is_iframe #compose_buttons {
+    display: none;
+}
+
 .compose_table .message_header_colorblock,
 .compose_table .message_header {
     box-shadow: none;
@@ -496,6 +500,11 @@ a#undo_markdown_preview {
 }
 
 @media (min-width: 551px) {
+    #compose_buttons .compose_mobile_button {
+        display: none;
+    }
+}
+in-width: 551px) {
     #compose_buttons .compose_mobile_button {
         display: none;
     }
