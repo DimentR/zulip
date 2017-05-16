@@ -236,6 +236,7 @@ def home_real(request: HttpRequest) -> HttpResponse:
         show_invites = False
 
     request._log_data['extra'] = "[%s]" % (register_ret["queue_id"],)
+    is_iframe = True if request.GET.get('is_iframe', None) else False
     response = render(request, 'zerver/index.html',
                       context={'user_profile': user_profile,
                                'page_params': JSONEncoderForHTML().encode(page_params),
@@ -249,6 +250,7 @@ def home_real(request: HttpRequest) -> HttpResponse:
                                'show_webathena': user_profile.realm.webathena_enabled,
                                'enable_feedback': settings.ENABLE_FEEDBACK,
                                'embedded': narrow_stream is not None,
+                               'is_iframe': is_iframe,
                                },)
     patch_cache_control(response, no_cache=True, no_store=True, must_revalidate=True)
     return response
