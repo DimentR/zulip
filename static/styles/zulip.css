@@ -107,6 +107,7 @@ p.n-margin {
     height: 24px;
 }
 
+
 .top-messages-logo svg circle {
     fill: #444;
     stroke: #444;
@@ -115,6 +116,9 @@ p.n-margin {
 .top-messages-logo svg path {
     fill: #fff;
     stroke: #fff;
+
+.is_iframe .top-messages-logo {
+    display: none;
 }
 
 #unmute_muted_topic_notification {
@@ -188,6 +192,7 @@ p.n-margin {
     height: 40px;
 }
 
+
 #panels {
     -webkit-font-smoothing: antialiased;
 
@@ -230,6 +235,9 @@ p.n-margin {
 
 #panels .alert .buttons .alert-link {
     margin: 0px 5px;
+
+.is_iframe .header {
+    display: none;
 }
 
 .app {
@@ -269,6 +277,11 @@ p.n-margin {
     max-width: 250px;
 }
 
+.is_iframe .column-left,
+.is_iframe .column-right {
+    display: none;
+}
+
 .column-left {
     position: absolute;
     left: 0px;
@@ -306,6 +319,11 @@ p.n-margin {
     margin-right: 250px;
     margin-left: 250px;
     position: relative;
+}
+
+.is_iframe .column-middle {
+    margin-right: 25px;
+    margin-left: 25px;
 }
 
 textarea,
@@ -584,6 +602,10 @@ li.actual-dropdown-menu i {
        in Firefox only, for some reason;
        otherwise it gets a scrollbar */
     overflow: visible;
+}
+
+.is_iframe .message_area_padder {
+    margin-top: 0;
 }
 
 td.pointer {
@@ -1691,6 +1713,10 @@ blockquote p {
     z-index: 99;
 }
 
+.is_iframe #tab_bar_underpadding {
+    display: none;
+}
+
 #navbar-buttons {
     white-space: nowrap;
     margin-left: 15px;
@@ -1998,6 +2024,10 @@ div.floating_recipient {
 
 #floating_recipient_bar {
     top: 50px;
+}
+
+.is_iframe #floating_recipient_bar {
+    display: none;
 }
 
 .message-header-contents {
@@ -2625,6 +2655,14 @@ div.topic_edit_spinner .loading_indicator_spinner {
 
 #home {
     margin-top: 41px;
+}
+
+.is_iframe #home {
+    margin-top: 0;
+}
+
+.message-pane {
+    padding-left: 0.3em;
 }
 
 .screen {

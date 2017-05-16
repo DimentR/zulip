@@ -49,6 +49,10 @@
     padding: 3px 10px;
 }
 
+.is_iframe #compose_buttons {
+    display: none;
+}
+
 .compose_table .message_header_colorblock,
 .compose_table .message_header {
     box-shadow: none;
