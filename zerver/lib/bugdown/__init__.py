@@ -1194,6 +1194,7 @@ def fixup_link(link: markdown.util.etree.Element, target_blank: bool=True) -> No
     """Set certain attributes we want on every link."""
     if target_blank:
         link.set('target', '_blank')
+        link.set('rel', 'noreferrer')
     link.set('title', url_filename(link.get('href')))
 
 
